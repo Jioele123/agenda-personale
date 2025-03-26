@@ -1,0 +1,15 @@
+<h2>📋 Appuntamenti</h2>
+
+<button (click)="vaiAdAggiunta()">➕ Aggiungi Appuntamento</button>
+
+<hr />
+
+<ul>
+  @for (app of appointments; track $index) {
+    <li>
+      <strong>{{ app.titolo }}</strong><br />
+      📅 {{ app.data }} | 🕒 {{ app.ora }} | 📍 {{ app.luogo }}
+      <button (click)="eliminaAppuntamento($index)">🗑️ Elimina</button>
+    </li>
+  }
+</ul>
